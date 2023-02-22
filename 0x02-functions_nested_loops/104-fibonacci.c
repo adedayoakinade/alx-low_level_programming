@@ -1,23 +1,32 @@
 #include <stdio.h>
-  
-int fibonacci_numbers(int n)
+
+/**
+ * main - Entry point (code not working)
+ *
+ * Description: print the first 98 fibonacci numbers
+ * without using long long, malloc, pointers, arrays or structures
+ *
+ * Return: 0 (success)
+ */
+int main(void)
 {
-    if(n == 0){
-        return 0;
-    }
-    else if(n == 1){
-        return 1;
-    }
-    else{
-        return fibonacci_numbers(n-2) + fibonacci_numbers(n-1);
-    }
-}
-  
-int main() {
-    int n = 7;
-      for(int i = 0; i < n; i++)
-    {
-        printf("%.0Lf", fibonacci_numbers(n);
-    }
-    return 0;
+	long double prev, curr, temp;
+	int i;
+
+	prev = 1;
+	curr = 2;
+	i = 1;
+	printf("%.0Lf, %.0Lf, ", prev, curr);
+	while (i <= 96)
+	{
+		temp = curr;
+		curr += prev;
+		prev = temp;
+		printf("%.0Lf", curr);
+		if (i != 96)
+			printf(", ");
+		++i;
+	}
+	printf("\n");
+	return (0);
 }
