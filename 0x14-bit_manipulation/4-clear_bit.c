@@ -8,7 +8,7 @@
  *
  * @number: decimal value
  *
- * Return: null
+ * Return: nothing
 */
 void print_bin(unsigned long int number)
 {
@@ -29,6 +29,8 @@ void print_bin(unsigned long int number)
 */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
+	unsigned long int mask = 1;
+
 	/*if index is greater than size of n in binary coded decimal*/
 	if (index > INT_SIZE)
 		return (-1);
