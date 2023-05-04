@@ -1,7 +1,7 @@
 #include "main.h"
 
-#define CHAR_SIZE 8 /*size of char*/
-#define INT_SIZE (sizeof(unsigned long int) * CHAR_SIZE)
+#define CHAR_BITS 8 /*size of char*/
+#define INT_BITS (sizeof(unsigned long int) * CHAR_BITS)
 
 /**
  * print_bin - prints binary rep of @n
@@ -29,14 +29,28 @@ void print_bin(unsigned long int number)
 */
 int set_bit(unsigned long int *n, unsigned int index)
 {
+	unsigned long int mask = 1;
+	#ifdef DEBUG
+	unsigned long int n_before = *n;
+	#endif
 
 	/*if index is greater than size of n in binary coded decimal*/
-	if (index > INT_SIZE)
+	if (index > INT_BITS)
 		return (-1);
 
 	mask <<= index; /*create mask based on index position*/
 
 	*n = (*n | mask);
+
+	#ifdef DEBUG
+	printf("\n%ld in binary is ", n_before);
+	print_bin(n_before);
+	printf(" while mask right shifted to index %d is ", index);
+	print_bin(mask);
+	printf(" our new value n in binary is ");
+	print_bin(*n);
+	printf("\n\n");
+	#endif
 
 	return (1);
 }
