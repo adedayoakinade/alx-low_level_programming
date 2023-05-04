@@ -30,7 +30,7 @@ void print_bin(unsigned long int number)
 int clear_bit(unsigned long int *n, unsigned int index)
 {
 	/*if index is greater than size of n in binary coded decimal*/
-	if (index > INT_BITS)
+	if (index > INT_SIZE)
 		return (-1);
 
 	mask = ~(mask << index); /*create mask based on index position*/
