@@ -1,7 +1,5 @@
 # 0x14. C - Bit manipulation 
 
-![img](../.imgs/bit_manipulation.png)
-
 ## Resource
 
 - [Number Systems Introduction](https://www.youtube.com/watch?v=FFDMzbrEXaE&t=2s)
