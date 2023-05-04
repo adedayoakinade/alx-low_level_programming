@@ -41,26 +41,24 @@ unsigned int _strlen(const char *str)
 */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int result = 0; 
-	unsigned int baseVal = 1;
-	unsigned int num = 0;
+	int index;
+	unsigned int result = 0, base2 = 1,  num = 0;
 
 	/*if b is NULL return 0*/
 	if (b == NULL)
 		return (0);
 
 	/*iterate through string*/
-	for (int i = _strlen(b) - 1; i >= 0; i--)
+	for (index = _strlen(b) - 1; index >= 0; index--)
 	{
-		num = _atoi(b[i]); /*convert char to number*/
+		num = _atoi(b[index]); /*convert char to number*/
 
 		/*if number is not 0 or 1 return 0*/
 		if (num != 0 && num != 1)
 			return (0);
 
-		result += num * baseVal;
-
-		baseVal *= 2;
+		result += num * base2; /*enable debug to see it in action*/
+		base2 *= 2;
 	}
 
 	return (result);
